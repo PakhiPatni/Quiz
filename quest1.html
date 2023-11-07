@@ -8,52 +8,60 @@
 
     </script>
     <style>
-        .a{
+        .box1{
             height: 50px;
             width: 50px;
-            background-color: rgb(226, 43, 52);
+            background-color: rgb(21, 189, 211);
             margin-left: 0px;
             display: inline-block;
         }
-        .b{
+        .box2{
             height: 100px;
             width: 100px;
-            background-color: rgb(211, 21, 21);
+            background-color: rgb(21, 189, 211);
             margin-left: 250px;
             display: inline-block;
             
             display: none;
         }
-        .right, .left{
+        .rm, .lm{
             margin: 50px;
-            display: inline-block;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div class="a">
+    <div class="box1">
 
     </div>
-    <div class="b">
+    <div class="box2">
 
     </div>
     
-    <button class="left" id="l"> 
+    <button class="lm" id="l"> 
         Left Move
     </button>
-    <button class="right" id="r">
+    <button class="rm" id="r">
         Right Move
     </button>
     <script>
-        $(".right").click(function(){
-            $(".a").hide();
-            $(".b").show();
-            alert("Right shift.");
+        $(".rm").click(function(){
+            $(".box1").animate({'margin-left' : "+=250px"},function(){alert("You clicked on the right move button."); });
+            $(".box1").css({"height":"100px","width":"100px" });
+            // $(".box").css( { "margin-left" : "250px"});
+            
+            // $(".box1").hide();
+            // $(".box2").show();
+            
         });
-        $(".left").click(function(){
-            $(".a").show();
-            $(".b").hide();
-            alert("Back to initial.");
+        $(".lm").click(function(){
+            // $(".box1").show();
+            // $(".box2").hide();
+            // $(".box2").css('visibility','hidden');
+            // $(".box1").css('visibility','visible');
+            $(".box1").animate({'margin-left' : "-=250px"},function(){alert("You clicked on the left move button.");});
+            $(".box1").css({"height":"50px","width":"50px" });
+            
         });
 
     </script>
