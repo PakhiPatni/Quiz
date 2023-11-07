@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+    </script>
+    <style>
+        .a{
+            height: 50px;
+            width: 50px;
+            background-color: rgb(226, 43, 52);
+            margin-left: 0px;
+            display: inline-block;
+        }
+        .b{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(211, 21, 21);
+            margin-left: 250px;
+            display: inline-block;
+            
+            display: none;
+        }
+        .right, .left{
+            margin: 50px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+
+    </div>
+    <div class="b">
+
+    </div>
+    
+    <button class="left" id="l"> 
+        Left Move
+    </button>
+    <button class="right" id="r">
+        Right Move
+    </button>
+    <script>
+        $(".right").click(function(){
+            $(".a").hide();
+            $(".b").show();
+            alert("Right shift.");
+        });
+        $(".left").click(function(){
+            $(".a").show();
+            $(".b").hide();
+            alert("Back to initial.");
+        });
+
+    </script>
+</body>
+</html>
